@@ -4,7 +4,7 @@ const sharp = require('sharp');
 
 (async () => {
   try {
-    const src = path.resolve(__dirname, 'sonaris-player-embedded.json');
+    const src = path.resolve(__dirname, 'Epic-player-embedded.json');
     if (!fs.existsSync(src)) throw new Error('Embedded JSON not found: ' + src);
     const meta = JSON.parse(fs.readFileSync(src, 'utf8'));
     const dataUrl = meta.data || '';
@@ -17,7 +17,7 @@ const sharp = require('sharp');
     const assetsDir = path.join(__dirname, 'assets');
     if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir);
 
-    const outPath = path.join(assetsDir, 'sonaris-player.webp');
+    const outPath = path.join(assetsDir, 'Epic-player.webp');
 
     // Convert to webp
     const webpBuffer = await sharp(pngBuffer).webp({ quality: 90 }).toBuffer();
@@ -25,7 +25,7 @@ const sharp = require('sharp');
 
     // Update JSON to reference webp
     const newDataUrl = `data:image/webp;base64,${webpBuffer.toString('base64')}`;
-    meta.filename = 'sonaris-player.webp';
+    meta.filename = 'Epic-player.webp';
     meta.mime = 'image/webp';
     meta.size = webpBuffer.length;
     meta.data = newDataUrl;
