@@ -7,8 +7,8 @@ const parseCsvList = (value, fallback = []) => {
     .filter(Boolean);
 };
 
-const ownerId = process.env.OWNER_ID || '1105509323511169086';
-const partnerId = process.env.PARTNER_ID || '1497187125974798416';
+const ownerId = process.env.OWNER_ID || '1543971600360022088';
+const partnerId = process.env.PARTNER_ID || '1408124338175086613';
 const noPrefixUsers = parseCsvList(process.env.NO_PREFIX_USERS, [ownerId, partnerId]);
 
 const envLavalinkNodes = (() => {
@@ -44,10 +44,10 @@ const envLavalinkNodes = (() => {
 module.exports = {
   token: process.env.DISCORD_TOKEN || '',
   clientId: process.env.CLIENT_ID || '1541831397004550204',
-  guildId: process.env.GUILD_ID || '1535279044906586195',
+  guildId: process.env.GUILD_ID || '1544249019876769863',
   prefix: process.env.COMMAND_PREFIX || '$',
   enablePrefix: true,
-  supportServer: process.env.SUPPORT_SERVER || 'https://discord.gg/9dsUdQ2PPD',
+  supportServer: process.env.SUPPORT_SERVER || 'https://discord.gg/V7mssB2AZ',
   noPrefixUsers,
   owner: {
     id: ownerId,
